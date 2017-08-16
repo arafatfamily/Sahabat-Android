@@ -43,6 +43,7 @@ public class AppConfig {
     public static String API_PENDIDIKAN_V2 = "/api/v2/pendidikan";
     public static String API_TRACKER_V2 = "/api/v2/tracker";
 
+    public static final String TEXT_DPD = "DPD. ";
     public static final String TOPIC_GLOBAL = "global";
     public static final int NOTIFICATION_ID = 100;
     public static final int NOTIFICATION_ID_BIG_IMAGE = 101;
@@ -109,8 +110,8 @@ public class AppConfig {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                    Log.e(tag, "Waktu Koneksi Habis !" + error + "REQUEST_URL: " + Request_url(verb, url, parameters));
+                if (error instanceof TimeoutError) {
+                    Log.e(tag, "Waktu Koneksi Habis !");
                 } else if (error instanceof NoConnectionError) {
                     Log.e(tag, "Jaringan Tidak Terhubung Ke Server !");
                 } else if (error instanceof AuthFailureError) {
