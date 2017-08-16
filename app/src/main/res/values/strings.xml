@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Sahabat Demokrat</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Pengaturan</string>
+    <string name="action_profile">Profil Kader</string>
+    <string name="action_pengumuman">Pengumuman</string>
+    <string name="txt_news">Berita Utama</string>
+    <string name="txt_member">Kader Sekitar</string>
+    <string name="txt_youtube">Demokrat TV</string>
+    <string name="txt_twitter">Twitter SBY</string>
+    <string name="txt_survei">Survei Digital</string>
+    <string name="txt_pengaduan">Pengaduan</string>
+    <string name="txt_register">Pendaftaran</string>
+    //String For Loader Messages
+    <string name="loading">Loading...</string>
+    <string name="phone_messages">Loading...</string>
+    <string name="empty_phone">No. Seluler tidak boleh kosong!</string>
+    <string name="logging_in">Memerisa Otorisasi!</string>
+    //String For Login Activity
+    <string name="input_username">No. Seluler</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    //String For Networks Case
+    <string name="TimeoutError">Waktu Koneksi Habis !</string>
+    <string name="NoConnectionError">Jaringan Tidak Terhubung Ke Server !</string>
+    <string name="AuthFailureError">Otorisasi Gagal! Silahkan Hubungi IT BPOKK PD!</string>
+    <string name="ServerError">Maaf! Nomer Seluler Tidak Terdaftar!</string>
+    <string name="NetworkError">Periksa Jaringan Anda!</string>
+    <string name="ParseError">Pemecahan Data Gagal! Silahkan Hubungi IT BPOKK PD!</string>
+    <string name="sign_up">D A F T A R</string>
+    <string name="sign_in">M A S U K</string>
+    //String For Register Activity
+    <string name="t_tab_info">DATA CALON KADER</string>
+    <string name="t_tab_dokumen">DOKUMEN CALON KADER</string>
+    <string name="th_register">Registrasi Kader</string>
+    <string name="i_nomorIdentitas">Nomer Identitas</string>
+    <string name="i_namaLengkap">Nama Lengkap</string>
+    <string name="i_tempatLahir">Tempat Lahir</string>
+    <string name="i_tglLahir">Tanggal Lahir</string>
+    <string name="i_jenisKelamin">Jenis Kelamin</string>
+    <string name="i_golonganDarah">Golongan Darah</string>
+    <string name="i_statusPerkawinan">Status Pernikahan</string>
+    <string name="i_namaPasangan">Nama Pasanagan</string>
+    <string name="i_namaAnak">Nama Anak</string>
+    <string name="i_agama">Agama</string>
+    <string name="i_pendidikan">Pendidikan Terakhir</string>
+    <string name="i_pekerjaan">Pekerjaan</string>
+    <string name="i_propinsiY">Propinsi (sesuai identitas)</string>
+    <string name="i_kabupatenY">Kabupaten (sesuai identitas)</string>
+    <string name="i_kecamatanY">Kecamatan (sesuai identitas)</string>
+    <string name="i_kelurahanY">Kelurahan (sesuai identitas)</string>
+    <string name="i_alamatY">Alamat (sesuai identitas)</string>
+    <string name="i_nomerRumahY">No. Rumah (sesuai identitas)</string>
+    <string name="i_RtY">RT. (sesuai identitas)</string>
+    <string name="i_RwY">RW. (sesuai identitas)</string>
+    <string name="i_kodePosY">Kode Pos (sesuai identitas)</string>
+    <string name="i_domisiliYN">Domisili Sesuai Identitas ?</string>
+    <string name="i_propinsiN">Propinsi (sesuai domisili)</string>
+    <string name="i_kabupatenN">Kabupaten (sesuai domisili)</string>
+    <string name="i_kecamatanN">Kecamatan (sesuai domisili)</string>
+    <string name="i_kelurahanN">Kelurahan (sesuai domisili)</string>
+    <string name="i_alamatN">Alamat (sesuai domisili)</string>
+    <string name="i_nomerRumahN">No. Rumah (sesuai domisili)</string>
+    <string name="i_RtN">RT. (sesuai domisili)</string>
+    <string name="i_RwN">RW. (sesuai domisili)</string>
+    <string name="i_kodePosN">Kode Pos (sesuai domisili)</string>
+    <string name="i_nomerTlp">Nomor Telp Rumah</string>
+    <string name="i_nomerHp">Nomor Seluler</string>
+    <string name="i_email">Alamat Email</string>
+    <string name="i_facebook">Facebook Profil</string>
+    <string name="i_twitter">Twitter Profil</string>
+
+    <string name="err_userid">Wrong User Id</string>
+    <string name="err_name">Requried Human Name </string>
+    <string name="err_email">Wrong Email</string>
+    <string name="err_tel">Phone number is not valid</string>
+    <string name="err_zipcode">Wrong Zip code</string>
+    <string name="err_height">Required integer type</string>
+    <string name="err_year">invalid year</string>
+    <string name="err_ip">invalid Ip Address</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

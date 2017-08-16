@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "330518508045",
+    "firebase_url": "https://sahabat-147803.firebaseio.com",
+    "project_id": "sahabat-147803",
+    "storage_bucket": "sahabat-147803.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330518508045:android:1d63dc549c163eef",
+        "android_client_info": {
+          "package_name": "com.sahabat.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330518508045-tl0ub1u881qvp9c783qbt0bajhsl7t0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzXuxxRaFMc97T3riBDR8Y4aOhS3v07B8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news"
+            android:checked="true"
+            android:actionLayout="@layout/activity_main"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/txt_news" />
+        <item
+            android:id="@+id/nav_member"
+            android:icon="@drawable/ic_contacts_black_24dp"
+            android:title="@string/txt_member" />
+        <item
+            android:id="@+id/nav_youtube"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/txt_youtube" />
+        <item
+            android:id="@+id/nav_twitter"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/txt_twitter" />
+        <item
+            android:id="@+id/nav_survei"
+            android:icon="@drawable/ic_poll_black_24dp"
+            android:title="@string/txt_survei" />
+        <item
+            android:id="@+id/nav_pengaduan"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/txt_pengaduan" />
+    </group>
+
+    <item android:title="Layanan Kader">
+        <menu>
+            <item
+                android:id="@+id/nav_register"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="@string/txt_register" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:padding="@dimen/margin_8">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/nav_header_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/container_bg"
+            android:minWidth="280dp"
+            android:paddingBottom="@dimen/margin_8"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingLeft="@dimen/margin_16"
+            android:paddingRight="@dimen/margin_16"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_passwd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/btnregister"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_login_with_twitter">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/handphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/input_username"
+                    android:imeOptions="actionGo"
+                    android:inputType="phone"
+                    android:maxLength="15"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnregister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:backgroundTint="@color/colorAccentRegister"
+                android:text="@string/sign_up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/btnLogin"
+                app:layout_constraintTop_toBottomOf="@+id/text_input_passwd" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/sign_in"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/btnregister"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_input_passwd" />
+
+            <ImageButton
+                android:id="@+id/btn_login_with_twitter"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription=""
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_button_twitter_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_passwd"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/btn_login_with_facebook"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/btn_login_with_facebook"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_button_facebook_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_passwd"
+                app:layout_constraintLeft_toRightOf="@+id/btn_login_with_twitter"
+                app:layout_constraintRight_toLeftOf="@+id/btn_login_with_instagram"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/btn_login_with_instagram"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_button_email_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_passwd"
+                app:layout_constraintLeft_toRightOf="@+id/btn_login_with_facebook"
+                app:layout_constraintRight_toLeftOf="@+id/btn_login_with_google"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/btn_login_with_google"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_button_google_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_passwd"
+                app:layout_constraintLeft_toRightOf="@+id/btn_login_with_instagram"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
