@@ -242,18 +242,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         idNews = slider.getBundle().getString("extra");
         read.putExtra("news", idNews);
         startActivity(read);
-        // finish();
-
-        Map<String, Object> params = new HashMap<>();
-        params.put("data", "detail");
-        params.put("id", idNews);
-
-        AppConfig.GETJSON("GET", AppConfig.API_BERITA_V2, params, new AppConfig.onRespOK() {
-            @Override
-            public void onSuccessResponse(String result) {
-                Log.d("GET_BERITA_DETIL", result);
-            }
-        });
     }
 
     @Override

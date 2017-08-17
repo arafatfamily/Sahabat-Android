@@ -51,6 +51,10 @@ public class AppConfig {
     public static final String PUSH_NOTIFICATION = "pushNotification";
     public static final String SHARED_PREF = "sahabat";
 
+    public static String DATEID(String date) {
+        return "12 September 1986";
+    }
+
     private static Integer methodes(String verb) {
         switch (verb) {
             case "DELETE":
