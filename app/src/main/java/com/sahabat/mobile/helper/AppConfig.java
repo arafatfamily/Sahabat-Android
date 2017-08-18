@@ -1,9 +1,13 @@
 package com.sahabat.mobile.helper;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.EditText;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkError;
 import com.android.volley.NoConnectionError;
 import com.android.volley.ParseError;
@@ -53,6 +57,27 @@ public class AppConfig {
 
     public static String DATEID(String date) {
         return "12 September 1986";
+    }
+
+    public static void NEXTFORM(final EditText field1, final EditText field2, final int size) {
+        field1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (field1.getText().toString().length() == size) {
+                    field2.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     private static Integer methodes(String verb) {
@@ -148,6 +173,8 @@ public class AppConfig {
                 return headers;
             }
         };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         AppController.getInstance().addToRequestQueue(stringRequest, tag);
     }
 }
