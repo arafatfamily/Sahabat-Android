@@ -56,10 +56,6 @@ public class LoginActivity extends Activity {
         btnLinkToRegister = (Button) findViewById(R.id.btnregister);
         sharedPreferences = getSharedPreferences("number", Context.MODE_PRIVATE);
         String restoredText = sharedPreferences.getString("number", null);
-        if (restoredText != null) {
-            confirmOTPDialog(restoredText);
-            inputHandphone.setText(restoredText);
-        }
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -69,6 +65,11 @@ public class LoginActivity extends Activity {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
+        } else {
+            if (restoredText != null) {
+                confirmOTPDialog(restoredText);
+                inputHandphone.setText(restoredText);
+            }
         }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {

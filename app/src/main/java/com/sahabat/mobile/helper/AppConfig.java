@@ -8,15 +8,14 @@ import android.widget.EditText;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.NetworkError;
-import com.android.volley.NoConnectionError;
-import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.ServerError;
-import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -123,6 +122,45 @@ public class AppConfig {
         }
     }
 
+    public interface onResponse {
+        void onSuccess(JSONArray result);
+    }
+
+    public static void GETDOMISILI(String data, String mode, final onResponse callback) {
+        String URi = null;
+        Map<String, Object> params = new HashMap<>();
+        switch (mode) {
+            case "PROPINSI":
+                URi = API_PROPINSI_V2;
+                break;
+            case "KABUPATEN":
+                URi=API_KABUPATEN_V2;
+                params.put("id_prov", data);
+                break;
+            case "KECAMATAN":
+                URi=API_KECAMATAN_V2;
+                params.put("id_kab", data);
+                break;
+            case "KELURAHAN":
+                URi = API_KELURAHAN_V2;
+                params.put("id_kec", data);
+            default:
+                break;
+        }
+
+        GETJSON("GET", URi, params, new onRespOK() {
+            @Override
+            public void onSuccessResponse(String result) {
+                try {
+                    JSONObject ret = new JSONObject(result);
+                    callback.onSuccess(ret.getJSONArray("data"));
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
     public interface onRespOK {
         void onSuccessResponse(String result);
     }
@@ -139,7 +177,22 @@ public class AppConfig {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                if (error instanceof TimeoutError) {
+                String body;
+                String statusCode = String.valueOf(error.networkResponse.statusCode);
+                if (error.networkResponse.data!=null) {
+                    try {
+                        body = new String(error.networkResponse.data, "UTF-8");
+                        try {
+                            JSONObject message = new JSONObject(body);
+                            Log.e("Volley Err: ", message.getString("message"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
+                /*if (error instanceof TimeoutError) {
                     Log.e(tag, "Waktu Koneksi Habis !");
                 } else if (error instanceof NoConnectionError) {
                     Log.e(tag, "Jaringan Tidak Terhubung Ke Server !");
@@ -153,7 +206,7 @@ public class AppConfig {
                     Log.e(tag, "Pemecahan Data Gagal! Silahkan Hubungi IT BPOKK PD!");
                 } else {
                     Log.e(tag, error.getMessage());
-                }
+                }*/
             }
 
         }) {
@@ -174,7 +227,7 @@ public class AppConfig {
             }
         };
 
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         AppController.getInstance().addToRequestQueue(stringRequest, tag);
     }
 }
